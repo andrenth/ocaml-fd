@@ -43,7 +43,6 @@ install -d -m 755 %{buildroot}/%{ocaml_sitelib}/stublibs
 install -d -m 755 %{buildroot}/%_defaultdocdir/%{name}/html
 ocamlfind install fd META -destdir %{buildroot}/%{ocaml_sitelib} \
   fd.cmi fd.mli fd.cma fd.cmxa dllfd.so libfd.a fd.a
-install -m 644 doc/* %{buildroot}/%_defaultdocdir/%{name}/html
 rm -f %{buildroot}/%{ocaml_sitelib}/stublibs/*.owner
 
 %clean
@@ -51,10 +50,9 @@ rm -rf %{buildroot}
 
 %files devel
 %defattr(-,root,root)
-%doc INSTALL LICENSE
+%doc INSTALL LICENSE doc/html
 %{ocaml_sitelib}/fd
 %{ocaml_sitelib}/stublibs/dllfd.so
-%_defaultdocdir/%{name}/html
 
 %changelog
 * Thu Aug 09 2007 Andre Nathan <andre@digirati.com.br> 1.0.0-1mdv2008.0
