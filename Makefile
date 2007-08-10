@@ -51,7 +51,7 @@ uninstall:
 ## Documentation
 .PHONY: doc
 doc::
-	mkdir doc/html; cd doc/html; $(OCAMLDOC) -html -I .. ../$(NAME).mli
+	mkdir -p doc/html; cd doc/html; $(OCAMLDOC) -html -I ../.. ../../$(NAME).mli
 
 ## Testing
 .PHONY: test
@@ -65,7 +65,7 @@ testopt: allopt
 ## Cleaning up
 .PHONY: clean
 clean::
-	rm -f *~ *.cm* *.o *.a *.so depend doc/*
+	rm -rf *~ *.cm* *.o *.a *.so depend doc/*
 	cd test/ml; make clean
 
 FORCE:
