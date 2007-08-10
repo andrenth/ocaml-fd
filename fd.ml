@@ -16,4 +16,4 @@ external recv_fd : conn:Unix.file_descr -> Unix.file_descr =
   "ocaml_recv_fd"
 
 external fexecve : fd:Unix.file_descr -> args:string array ->
-  env:string array -> unit = "ocaml_fexecve"
+  env:string array -> 'a = "ocaml_fexecve"
