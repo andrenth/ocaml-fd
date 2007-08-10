@@ -16,10 +16,8 @@ BuildRequires:  findlib
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
-This OCaml library implements descriptor-passing functions. Tipically, this
-functionality is used to allow a process to perform all the actions needed
-to acquire a descriptor, which is then sent to another process, which will
-then handle the data transfer operations on that descriptor.
+This OCaml library implements miscellaneous functions related to UNIX file
+descriptors. Currently, send_fd, recv_fd and fexecve are implemented.
 
 %package	devel
 Summary:	Development files for %{name}

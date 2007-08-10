@@ -5,11 +5,16 @@
  * Lesser General Public License. See the LICENSE file for details.
  *)
 
-(** This module implements the {!Fd.send_fd} and {!Fd.recv_fd} functions,
-    which are respectively used to send and receive descriptors. Tipically,
-    this functionality is used to allow a process to perform all the actions
-    needed to acquire a descriptor, which is then sent to another process,
-    which will then handle the data transfer operations on that descriptor. *)
+(** This module implements miscellaneous functions related to UNIX file
+    descriptors. Currently, the functions listed below are implemented.
+
+    - {!Fd.send_fd} and {!Fd.recv_fd}, which are respectively used to send
+      and receive descriptors. Tipically, this functionality is used to
+      allow a process to perform all the actions needed to acquire a
+      descriptor, which is then sent to another process, which will then
+      handle the data transfer operations on that descriptor.
+    - {!Fd.fexecve}, which is used to execute a program specified via a
+      file descriptor. *)
 
 (** This exception is raised by {!Fd.send_fd} and {!Fd.recv_fd} when an error
     is encountered. The string contains the error message. *)
@@ -34,6 +39,14 @@ val send_fd : conn:Unix.file_descr -> fd:Unix.file_descr -> unit
     @raise Fd_error This exception is raised on error. *)
 val recv_fd : conn:Unix.file_descr -> Unix.file_descr
 
-(** TODO no docs! *)
+(** This function works like [Unix.execve], but the program to be executed,
+    its first paramenter, is specified via a file descriptor. As is the case
+    with the [Unix.execv*] functions, {!Fd.fexecve} never returns. If the
+    call succeeds, the current process is substituted by the new one.
+    
+    @param fd The file descriptor corresponding to the program to be executed.
+    @param args An array of arguments to be passed to the program.
+    @param env The environment to the program.
+    @raise Fd_error This exception is raised on error. *)
 val fexecve : fd:Unix.file_descr -> args:string array -> env:string array ->
   unit
