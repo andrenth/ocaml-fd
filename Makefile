@@ -51,7 +51,7 @@ uninstall:
 ## Documentation
 .PHONY: doc
 doc::
-	cd doc; $(OCAMLDOC) -html -I .. ../$(NAME).mli
+	mkdir doc/html; cd doc/html; $(OCAMLDOC) -html -I .. ../$(NAME).mli
 
 ## Testing
 .PHONY: test
