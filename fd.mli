@@ -48,5 +48,4 @@ val recv_fd : conn:Unix.file_descr -> Unix.file_descr
     @param args An array of arguments to be passed to the program.
     @param env The environment to the program.
     @raise Fd_error This exception is raised on error. *)
-val fexecve : fd:Unix.file_descr -> args:string array -> env:string array ->
-  unit
+val fexecve : fd:Unix.file_descr -> args:string array -> env:string array -> 'a
