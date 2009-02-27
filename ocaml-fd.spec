@@ -1,5 +1,5 @@
 %define name	ocaml-fd
-%define version	1.0.1
+%define version	1.1.0
 %define release	%mkrel 1
 %define ocaml_sitelib %(if [ -x /usr/bin/ocamlc ]; then ocamlc -where;fi)/site-lib
 
@@ -7,7 +7,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Summary:	Descriptor-passing functions for OCaml.
-Source: 	http://oss.digirati.com.br/ocaml-fd/ocaml-fd-%{version}.tar.bz2
+Source: 	http://oss.digirati.com.br/ocaml-fd/ocaml-fd-%{version}.tar.gz
 URL:		http://oss.digirati.com.br/ocaml-fd
 License:	LGPL
 Group:		Development/Other
@@ -54,5 +54,8 @@ rm -rf %{buildroot}
 %{ocaml_sitelib}/stublibs/dllfd_stubs.so
 
 %changelog
+* Mon Mar 02 2009 Andre Nathan <andre@digirati.com.br> 1.1.0-1mdv2009.0
+- Release 1.1.0.
+
 * Thu Aug 09 2007 Andre Nathan <andre@digirati.com.br> 1.0.0-1mdv2008.0
 - First release.
