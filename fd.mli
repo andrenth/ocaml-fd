@@ -49,3 +49,11 @@ val recv_fd : conn:Unix.file_descr -> Unix.file_descr
     @param env The environment to the program.
     @raise Fd_error This exception is raised on error. *)
 val fexecve : fd:Unix.file_descr -> args:string array -> env:string array -> 'a
+
+(** This function reads sender credentials from a descriptor. The descriptor
+    must be associated to a UNIX socket. Currently only Linux is supported.
+
+    @param fd The file descriptor to read the credentials from.
+    @return A tuple of integers containing the sender PID, UID and GID.
+    @raise Fd_error This exception is raised on error. *)
+val read_cred : fd:Unix.file_descr -> int * int * int

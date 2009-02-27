@@ -1,9 +1,11 @@
 /*
- * Copyright 2007 Digirati Informática, Serviços e Telecomunicações
+ * Copyright 2007, 2008, 2009 Digirati Informática, Serviços e Telecomunicações
  *
  * This file is distributed under the terms of version 2.1 of the GNU
  * Lesser General Public License. See the LICENSE file for details.
  */
+
+#define _GNU_SOURCE
 
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -12,11 +14,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-#ifdef __GLIBC__
-#define __USE_GNU
-#endif
-
 #include <unistd.h>
 
 #include <caml/mlvalues.h>
@@ -213,3 +210,36 @@ ocaml_fexecve(value fd_val, value argv_val, value envp_val)
 }
 
 #endif /* __GLIBC__ */
+
+/*
+ * Reading sender credentials using getsockopt(2) is a Linux-specific
+ * extension.
+ */
+#if defined(SO_PEERCRED)
+CAMLprim value
+ocaml_read_cred(value fd_val)
+{
+    CAMLparam1(fd_val);
+    CAMLlocal1(res);
+    struct ucred crd;
+    socklen_t crdlen = sizeof crd;
+    int fd = Int_val(fd_val);
+
+    if (getsockopt(fd, SOL_SOCKET, SO_PEERCRED, &crd, &crdlen) == -1)
+        fd_error(strerror(errno));
+
+    res = caml_alloc_tuple(3);
+    Store_field(res, 0, Val_int(crd.pid));
+    Store_field(res, 1, Val_int(crd.uid));
+    Store_field(res, 2, Val_int(crd.gid));
+    CAMLreturn (res);
+}
+#else
+CAMLprim value
+ocaml_read_cred(value fd_val)
+{
+    CAMLparam1(fd_val);
+    fd_error("Reading credentials is not yet implemented for your system");
+    CAMLreturn (Val_unit); /* not reached */
+}
+#endif

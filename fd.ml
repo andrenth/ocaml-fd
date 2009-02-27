@@ -17,3 +17,6 @@ external recv_fd : conn:Unix.file_descr -> Unix.file_descr =
 
 external fexecve : fd:Unix.file_descr -> args:string array ->
   env:string array -> 'a = "ocaml_fexecve"
+
+external read_cred : fd:Unix.file_descr -> int * int * int =
+  "ocaml_read_cred"
