@@ -13,7 +13,8 @@ Building:
 
 To build ocaml-fd, simply type "make" in this directory. This will build
 the bytecode library. If you also want the natively-compiled library,
-you should also run "make allopt".
+you should also run "make opt". You can build both at once by running
+"make reallyall".
 
 
 Installing:
