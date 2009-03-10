@@ -14,10 +14,13 @@
       descriptor, which is then sent to another process, which will then
       handle the data transfer operations on that descriptor.
     - {!Fd.fexecve}, which is used to execute a program specified via a
-      file descriptor. *)
+      file descriptor.
+    - {!Fd.read_cred}, which is used to read sender credentials from a file
+      descriptor. The file descriptor must be associated with a UNIX socket.
+      Currently, this is only implemented for Linux systems. *)
 
-(** This exception is raised by {!Fd.send_fd} and {!Fd.recv_fd} when an error
-    is encountered. The string contains the error message. *)
+(** This exception is raised by the functions in the {!Fd} module when an
+    error is encountered. The string contains the error message. *)
 exception Fd_error of string
 
 (** This function sends a descriptor over a Unix socket whose peer may
