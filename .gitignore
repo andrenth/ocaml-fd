@@ -1,4 +1,7 @@
 .gitignore
 _build/
-setup.ml
-setup.data
+_tags
+lib/*.mllib
+lib/*.clib
+myocamlbuild.ml
+setup.*
