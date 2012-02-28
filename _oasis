@@ -1,0 +1,13 @@
+OASISFormat: 0.2
+Name:        Fd
+Version:     1.1.1
+Synopsis:    File descriptor utilities for OCaml
+Authors:     Andre Nathan
+License:     BSD3
+
+Library fd
+  Path:            lib
+  BuildTools:      ocamlbuild
+  CompiledObject:  best
+  Modules:         Fd
+  CSources:        fd_stubs.c

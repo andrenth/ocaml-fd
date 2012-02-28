@@ -1,10 +1,12 @@
-SOURCES=fd_stubs.c fd.mli fd.ml
-RESULT=fd
+all:
+	@#ocaml setup.ml -build -classic-display
+	ocaml setup.ml -build
 
-all: byte-code-library
-opt: native-code-library
-reallyall: byte-code-library native-code-library
-install: libinstall
-uninstall: libuninstall
+configure:
+	oasis setup && ocaml setup.ml -configure
 
--include OCamlMakefile
+install:
+	ocaml setup.ml -install
+
+clean:
+	ocaml setup.ml -clean
