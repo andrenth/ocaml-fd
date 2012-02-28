@@ -11,3 +11,11 @@ Library fd
   CompiledObject:  best
   Modules:         Fd
   CSources:        fd_stubs.c
+
+Document fd
+  Title:                Fd documentation
+  Type:                 ocamlbuild (0.2)
+  BuildTools:           ocamlbuild
+  BuildTools+:          ocamldoc
+  XOCamlbuildPath:      lib
+  XOCamlbuildLibraries: fd
