@@ -3,7 +3,7 @@ Name:        Fd
 Version:     1.1.1
 Synopsis:    File descriptor utilities for OCaml
 Authors:     Andre Nathan
-License:     BSD3
+License:     LGPL-2.1 with OCaml linking exception
 
 Library fd
   Path:            lib
