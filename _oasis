@@ -12,6 +12,38 @@ Library fd
   Modules:         Fd
   CSources:        fd_stubs.c
 
+Executable test
+  Path:            lib_test/ml
+  BuildTools:      ocamlbuild
+  MainIs:          test.ml
+  Install:         false
+  CompiledObject:  best
+  BuildDepends:    fd, unix
+
+Executable mycat
+  Path:            lib_test/ml
+  BuildTools:      ocamlbuild
+  MainIs:          mycat.ml
+  Install:         false
+  CompiledObject:  best
+  BuildDepends:    fd, unix
+
+Executable fexecve
+  Path:            lib_test/ml
+  BuildTools:      ocamlbuild
+  MainIs:          fexecve.ml
+  Install:         false
+  CompiledObject:  best
+  BuildDepends:    fd, unix
+
+Executable openfile
+  Path:            lib_test/ml
+  BuildTools:      ocamlbuild
+  MainIs:          openfile.ml
+  Install:         false
+  CompiledObject:  best
+  BuildDepends:    fd, unix
+
 Document fd
   Title:                Fd documentation
   Type:                 ocamlbuild (0.2)
