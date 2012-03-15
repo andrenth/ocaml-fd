@@ -1,0 +1,40 @@
+Source: ocaml-fd
+Priority: optional
+Maintainer: Andre Nathan <andre@digirati.com.br>
+Build-Depends:
+ debhelper (>= 8),
+ dh-ocaml (>= 0.9),
+ ocaml-findlib,
+ libfindlib-ocaml-dev,
+ oasis,
+ ocaml-nox (>= 3.12)
+Standards-Version: 3.9.2
+Section: ocaml
+Homepage: http://oss.digirati.com.br/ocaml-fd/
+Vcs-Git: git://github.com/andrenth/ocaml-fd.git
+
+Package: libfd-ocaml-dev
+Architecture: any
+Depends:
+ ${ocaml:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends}
+Provides: ${ocaml:Provides}
+Recommends:
+ ocaml-findlib
+Description: utility functions involving UNIX file descriptors for OCaml
+ OcamlFd is an extension library for the OCaml language, providing
+ miscellaneous utility functions involving UNIX file descriptors.
+
+Package: libfd-ocaml
+Architecture: any
+Depends:
+ ${ocaml:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends}
+Provides: ${ocaml:Provides}
+Description: utility functions involving UNIX file descriptors for OCaml
+ OcamlFd is an extension library for the OCaml language, providing
+ miscellaneous utility functions involving UNIX file descriptors.
+ .
+ This package contains runtime libraries for programs using ocaml-fd.

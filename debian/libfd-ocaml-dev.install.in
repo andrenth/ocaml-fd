@@ -1,0 +1,5 @@
+@OCamlStdlibDir@/fd/*.cm[ix]
+@OCamlStdlibDir@/fd/*.ml*
+@OCamlStdlibDir@/fd/*.a
+OPT: @OCamlStdlibDir@/fd/*.cmxa
+usr/share/doc/libfd-ocaml-dev

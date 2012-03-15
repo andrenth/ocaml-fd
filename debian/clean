@@ -1,0 +1,3 @@
+debian/libfd-ocaml-dev.install
+debian/libfd-ocaml.install
+debian/libfd-ocaml.dirs.in
