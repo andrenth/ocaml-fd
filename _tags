@@ -1,0 +1,20 @@
+# OASIS_START
+# DO NOT EDIT (digest: 16e9d97865c77468acb6f89f78b4f39a)
+# Library fd
+"lib": include
+<lib/fd.{cma,cmxa}>: use_libfd
+# Executable fexecve
+<lib_test/ml/fexecve.{native,byte}>: use_fd
+<lib_test/ml/fexecve.{native,byte}>: pkg_unix
+# Executable test
+<lib_test/ml/test.{native,byte}>: use_fd
+<lib_test/ml/test.{native,byte}>: pkg_unix
+# Executable mycat
+<lib_test/ml/mycat.{native,byte}>: use_fd
+<lib_test/ml/mycat.{native,byte}>: pkg_unix
+# Executable openfile
+<lib_test/ml/openfile.{native,byte}>: use_fd
+<lib_test/ml/openfile.{native,byte}>: pkg_unix
+<lib_test/ml/*.ml{,i}>: use_fd
+<lib_test/ml/*.ml{,i}>: pkg_unix
+# OASIS_STOP
