@@ -12,7 +12,6 @@ export OCAMLFIND_DESTDIR=$(DESTDIR)/$(OCAML_STDLIB_DIR)
 export OCAMLFIND_LDCONF=ignore
 
 %:
-	oasis setup
 	dh $@ --with ocaml
 
 .PHONY: override_dh_auto_configure
