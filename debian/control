@@ -2,11 +2,11 @@ Source: ocaml-fd
 Priority: optional
 Maintainer: Andre Nathan <andre@digirati.com.br>
 Build-Depends:
- debhelper (>= 8),
+ debhelper (>= 7),
  dh-ocaml (>= 0.9),
  ocaml-findlib,
  libfindlib-ocaml-dev,
- ocaml-nox (>= 3.12)
+ ocaml-nox (>= 3.11)
 Standards-Version: 3.9.2
 Section: ocaml
 Homepage: http://oss.digirati.com.br/ocaml-fd/
