@@ -6,7 +6,6 @@ Build-Depends:
  dh-ocaml (>= 0.9),
  ocaml-findlib,
  libfindlib-ocaml-dev,
- oasis,
  ocaml-nox (>= 3.12)
 Standards-Version: 3.9.2
 Section: ocaml

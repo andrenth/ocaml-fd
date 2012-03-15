@@ -3,4 +3,5 @@ _build/
 _tags
 lib/*.odocl
 setup.data
+setup.log
 *.native
