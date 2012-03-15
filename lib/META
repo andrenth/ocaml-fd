@@ -1,5 +1,5 @@
 name = "fd"
-version = "1.1.1"
+version = "1.1.2"
 description = "OCaml utility functions involving file descriptors."
 requires = "unix"
 archive(byte) = "fd.cma"

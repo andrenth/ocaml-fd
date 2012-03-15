@@ -1,6 +1,6 @@
 OASISFormat: 0.2
 Name:        fd
-Version:     1.1.1
+Version:     1.1.2
 Synopsis:    File descriptor utilities for OCaml
 Authors:     Andre Nathan
 License:     LGPL-2.1 with OCaml linking exception
